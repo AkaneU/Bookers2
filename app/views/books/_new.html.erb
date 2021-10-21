@@ -1,0 +1,8 @@
+<h1>New book</h1>
+<%= form_with model: books, local:true do |book| %>
+  <label for="inputTitle">Title</label>
+  <%= book.text_field :title, id:"inputTitle" %>
+  <label for="inputBody">Opinion</label>
+  <%= book.text_area :body, id:"inputBody" %>
+  <%= book.submit "Create Book" %>
+<% end %>
