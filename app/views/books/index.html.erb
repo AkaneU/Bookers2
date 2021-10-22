@@ -1,8 +1,17 @@
-<%= render 'books/new', books: @book %>
+<% if @new_book.errors.any? %>
+    <div>
+      <%= @new_book.errors.count %> error prohibited this obj from being saved:
+    </div>
+    <% @new_book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+<% end %>
+<%= render 'books/new', books: @new_book %>
 <h1>Books</h1>
 <% @books.each do |book| %>
-  <%= attachment_image_tag book.user.profile_image, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
-  <%= book.user.name %>
-  <%=link_to book.title, book_path(book.id) %>
+  <%= link_to user_path(book.user_id) do %>
+    <%= attachment_image_tag book.user.profile_image, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
+  <% end %>
+  <%= link_to book.title, book_path(book.id) %>
   <%= book.body %>
 <% end %>

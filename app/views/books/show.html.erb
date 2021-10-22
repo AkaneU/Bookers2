@@ -1,8 +1,11 @@
-<%= render 'books/new', books: @book %>
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+<%= render 'books/new', books: @new_book %>
 <h2>Book detail</h2>
-<%= link_to user_path(@user.id) do %>
-    <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-    <%= @book.user.name %>
+<%= link_to user_path(@book.user_id) do %>
+  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+  <%= @book.user.name %>
 <% end %>
 <%= link_to @book.title, book_path(@book.id) %>
 <%= @book.body %>

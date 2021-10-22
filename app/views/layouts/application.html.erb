@@ -10,11 +10,11 @@
   </head>
 
   <body>
-    <%= link_to "Bookers", root_path %>
+    <a href="https://a8ef89d6cb424581967e96c8abf035f5.vfs.cloud9.us-east-1.amazonaws.com/">Bookers</a>
 
     <% if user_signed_in? %>
       <li>
-        <%= link_to "Home", root_path %>
+        <%= link_to "Home", users_path(@user) %>
       </li>
       <li>
         <%= link_to "Users", users_path %>
