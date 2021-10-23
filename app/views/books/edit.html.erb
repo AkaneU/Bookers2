@@ -1,17 +1,23 @@
-<h1>Editing Book</h1>
-<% if @book.errors.any? %>
-    <div>
-      <%= @book.errors.count %> error prohibited this obj from being saved:
-    </div>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Editing Book</h2>
+      <% if @book.errors.any? %>
+        <div>
+          <%= @book.errors.count %> error prohibited this obj from being saved:
+        </div>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      <% end %>
 
-<%= form_with model:@book, local:true do |f| %>
-  <lable for="inputTitle">Title</lable>
-  <%= f.text_field :title, autofocus: true, id:"inputTitle" %>
-  <lable for="inputBody">Opinion</lable>
-  <%= f.text_area :body, autofocus: true, id:"inputBody" %>
-  <%= f.submit "Update Book" %>
-<% end %>
+      <%= form_with model:@book, local:true do |f| %>
+        <lable for="inputTitle">Title</lable>
+        <%= f.text_field :title, autofocus: true, id:"inputTitle" %>
+        <lable for="inputBody">Opinion</lable>
+        <%= f.text_area :body, autofocus: true, id:"inputBody" %>
+        <%= f.submit "Update Book" %>
+      <% end %>
+    </div>
+  </div>
+</div>

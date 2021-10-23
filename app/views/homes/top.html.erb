@@ -1,13 +1,15 @@
-<h1>welcome to <i class="fas fa-book"></i>Bookers!!<h1>
-
-<p>
-In <i class="fas fa-book"></i>Bookers,
-
-you can share and exchange your opinions , inpressions , and emotions
-
-about various books!
-</p>
-
-<%= link_to "Log in", new_user_session_path, class: "btn btn-info btn-block" %>
-<%= link_to "Sign up", new_user_registration_path, class: "btn btn-success btn-block" %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>welcome to <i class="fas fa-book"></i>Bookers!!<h1>
+      <p>
+        In <i class="fas fa-book"></i>Bookers,
+        you can share and exchange your opinions , inpressions , and emotions
+        about various books!
+      </p>
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-info btn-block" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success btn-block" %>
+    </div>
+  </div>
+</div>
 
