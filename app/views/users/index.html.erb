@@ -1,3 +1,4 @@
+<%= render 'users/user_info', user: @user %>
 <h2>Users</h2>
 <% @users.each do |user| %>
   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
