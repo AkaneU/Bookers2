@@ -1,9 +1,13 @@
-<h5>User info</h5>
-<%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-<h6>User name </h6>
-<%= user.name %>
-<h6>Introduction
-<%= user.introduction %>
-<% if user.id == current_user.id %>
-  <p><%= link_to "プロフィール編集", edit_user_path(user) %></p>
-<% end %>
+<div class="container">
+  <div class="row">
+    <h5>User info</h5>
+    <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+    <h6>User name </h6>
+    <%= user.name %>
+    <h6>Introduction</h6>
+    <%= user.introduction %>
+    <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
+      <i class="fas fa-user-cog"></i>
+    <% end %>
+  </div>
+</div>

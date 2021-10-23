@@ -4,5 +4,5 @@
   <%= book.text_field :title, id:"inputTitle" %>
   <label for="inputBody">Opinion</label>
   <%= book.text_area :body, id:"inputBody" %>
-  <%= book.submit "Create Book" %>
+  <%= book.submit "Create Book", class: "btn btn-success" %>
 <% end %>
