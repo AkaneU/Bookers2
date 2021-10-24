@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <h2>User info</h2>
-      <%= render 'layouts/post_error_notice', object: @user %>
+      <div class="error_message"><%= render 'layouts/post_error_notice', object: @user %></div>
 
       <%= form_with model:@user, local:true do |f| %>
         <label for="inputName">Name</label>

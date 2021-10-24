@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-5 offset-md-3">
+    <div class="col-md-6 offset-md-3">
       <h2>Editing Book</h2>
-      <%= render 'layouts/post_error_notice', object: @book %>
+      <div class="error_message"><%= render 'layouts/post_error_notice', object: @book %></div>
 
       <%= form_with model:@book, local:true do |f| %>
-        <lable for="inputTitle">Title</lable>
+        <label for="inputTitle">Title</label>
         <%= f.text_field :title, autofocus: true, id:"inputTitle", class: "form-control" %>
-        <lable for="inputBody">Opinion</lable>
+        <label for="inputBody">Opinion</label>
         <%= f.text_area :body, autofocus: true, id:"inputBody", class: "form-control" %>
         <%= f.submit "Update Book", class: "btn btn-success" %>
       <% end %>

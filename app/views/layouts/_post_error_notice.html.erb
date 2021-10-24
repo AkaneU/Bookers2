@@ -1,8 +1,8 @@
 <% if object.errors.any? %>
-  <div>
+  <div class="error_message">
     <%= object.errors.count %> error prohibited this obj from being saved:
+    <% object.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
   </div>
-  <% object.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-  <% end %>
 <% end %>

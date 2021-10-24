@@ -37,28 +37,31 @@ label {
 
 .form-control {
  width: 90%;
- margin-bottom: 12px;
+ margin-bottom: 12px
 }
 
 
 p {
- margin-bottom: 25px;
+ margin-bottom: 15px;
+ font-size: 17px;
 }
 
 h1, h2 {
  margin-bottom: 8px;
 }
 
-.notification{
+.notification {
  margin-bottom: 16px;
 }
 
-.notification{
-  .notice {
-  color: green;
- }
+.notice {
+ color: green;
+}
 
- .alert {
+.alert {
  color: red;
- }
+}
+
+.error_message {
+ color: red;
 }
