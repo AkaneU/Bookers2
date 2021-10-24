@@ -17,8 +17,48 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 
 body {
  font-weight: 400;
  text-align: left;
+}
+
+label {
+ display: block;
+ margin-bottom: 8px;
+}
+
+
+.form-control {
+ width: 90%;
+ margin-bottom: 12px;
+}
+
+
+p {
+ margin-bottom: 25px;
+}
+
+h1, h2 {
+ margin-bottom: 8px;
+}
+
+.notification{
+ margin-bottom: 16px;
+}
+
+.notification{
+  .notice {
+  color: green;
+ }
+
+ .alert {
+ color: red;
+ }
 }

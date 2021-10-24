@@ -1,22 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-5 offset-md-3">
       <h2>Editing Book</h2>
-      <% if @book.errors.any? %>
-        <div>
-          <%= @book.errors.count %> error prohibited this obj from being saved:
-        </div>
-        <% @book.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      <% end %>
+      <%= render 'layouts/post_error_notice', object: @book %>
 
       <%= form_with model:@book, local:true do |f| %>
         <lable for="inputTitle">Title</lable>
-        <%= f.text_field :title, autofocus: true, id:"inputTitle" %>
+        <%= f.text_field :title, autofocus: true, id:"inputTitle", class: "form-control" %>
         <lable for="inputBody">Opinion</lable>
-        <%= f.text_area :body, autofocus: true, id:"inputBody" %>
-        <%= f.submit "Update Book" %>
+        <%= f.text_area :body, autofocus: true, id:"inputBody", class: "form-control" %>
+        <%= f.submit "Update Book", class: "btn btn-success" %>
       <% end %>
     </div>
   </div>
