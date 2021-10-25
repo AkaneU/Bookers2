@@ -25,11 +25,12 @@
 
 
 body {
- font-weight: 400;
  text-align: left;
+ font-weight: 400;
 }
 
-label {
+
+.form-label {
  display: block;
  margin-bottom: 8px;
 }
@@ -43,7 +44,7 @@ label {
 
 p {
  margin-bottom: 15px;
- font-size: 17px;
+ font-size: 15px;
 }
 
 h1, h2 {
@@ -64,4 +65,8 @@ h1, h2 {
 
 .error_message {
  color: red;
+}
+
+.nav-item {
+ font-weight: bold;
 }
