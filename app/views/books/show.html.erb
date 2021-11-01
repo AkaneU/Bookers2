@@ -37,6 +37,33 @@
           </tr>
         </tbody>
       </table>
+      <table>
+        <tbody>
+          <% @book_comment.each do |book_comment| %>
+          <tr>
+              <td>
+              <%= link_to user_path(book_comment.user_id) do %>
+                <%= attachment_image_tag book_comment.user.profile_image, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %>
+                <br>
+                <%= book_comment.user.name %>
+              <% end %>
+            </td>
+            <td>
+              <%= book_comment.comment %>
+            </td>
+            <% if book_comment.user == current_user %>
+            <td>
+              <%= link_to "Destroy", book_comments_path(book_comment.id), method: :delete, class: "btn btn-danger" %>
+            </td>
+            <% end %>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= form_with(model:[@book, @comment], local: true) do |f| %>
+        <%= f.text_area :comment %>
+        <%= f.submit "送信" %>
+      <% end %>
     </div>
   </div>
 </div>
