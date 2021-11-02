@@ -61,7 +61,7 @@
         </tbody>
       </table>
       <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
-        <%= f.text_area :comment %>
+        <%= f.text_area :comment, class: "form-control" %>
         <%= f.submit "送信" %>
       <% end %>
     </div>
