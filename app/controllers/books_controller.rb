@@ -9,10 +9,9 @@ class BooksController < ApplicationController
 
   def show
     @new_book = Book.new
-    @book = Book.find(params[:id])
+    @book = Book.includes(:book_comments).find(params[:id])
     @user = User.find(@book.user_id)
-    @book_comment = BookComment.find()
-    @comment = BookComment.new
+    @book_comment = BookComment.new
   end
 
   def create
