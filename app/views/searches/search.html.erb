@@ -1,4 +1,4 @@
-<% if @model == 'User' %>
+<% if @model == 'user' %>
   <h2>Users search for "<%= @content %>"</h2>
   <table class="table table-hover">
     <thead>
@@ -11,16 +11,16 @@
     <% @records.each do |user| %>
     <tbody>
       <tr>
-        <td><%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %></td>
+        <td><%= attachment_image_tag user.profile_image, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %></td>
         <td><%= user.name %></td>
         <td><%= link_to "Show", user_path(user.id) %></td>
       </tr>
     </tbody>
     <% end %>
   </table>
-  <% else @model == 'Book' %>
-    <h2>Books search for "<%=@content %>"</h2>
-    <table class="table table-hover">
+<% else @model == 'book' %>
+  <h2>Books search for "<%=@content %>"</h2>
+  <table class="table table-hover">
     <thead>
       <tr>
         <th></th>
@@ -40,6 +40,7 @@
         <td><%= link_to book.title, book_path(book.id) %></td>
         <td><%= book.body %></td>
       </tr>
+      <% end %>
     </tbody>
-  <% end %>
+  </table>
 <% end %>

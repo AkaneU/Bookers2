@@ -12,22 +12,22 @@ class SearchesController < ApplicationController
     if model == 'user'
       if method == 'perfect'
         User.where(name: content)
-      elseif method == 'partial'
-        User.where('name LIKE ?', '%'+content+'%')
-      elseif method == 'forward'
-        User.where('name LIKE ?', '#{content}%')
-      else
-        User.where('name LIKE ?', '%#{content}')
+      elsif method == 'partial'
+        User.where("name LIKE ?", "%#{content}%")
+      elsif method == 'forward'
+        User.where("name LIKE ?", "#{content}%")
+      elsif method == 'backward'
+        User.where("name LIKE ?", "%#{content}")
       end
-    elseif model == 'book'
+    elsif model == 'book'
       if method == 'perfect'
-        Bookr.where(title: content)
-      elseif method == 'partial'
-        Book.where('title LIKE ?', '%'+content+'%')
-      elseif method == 'forward'
-        Book.where('title LIKE ?', '#{content}%')
-      else
-        Book.where('title LIKE ?', '%#{content}')
+        Book.where(title: content)
+      elsif method == 'partial'
+        Book.where("title LIKE ?", "%#{content}%")
+      elsif method == 'forward'
+        Book.where("title LIKE ?", "#{content}%")
+      elsif method == 'backward'
+        Book.where("title LIKE ?", "%#{content}")
       end
     end
   end
