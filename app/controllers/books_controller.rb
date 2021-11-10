@@ -2,8 +2,8 @@ class BooksController < ApplicationController
 
 
   def index
+    @books = Book.left_joins(:favorites).group(:book_id).order('count(user_id) desc')
     @new_book = Book.new
-    @books = Book.all
     @user = User.find(current_user.id)
     @content = params["content"]
   end
@@ -63,6 +63,14 @@ class BooksController < ApplicationController
   end
 
   private
+
+  def time_range
+    to = Time.current.at_end_of_day
+    from = (to - 6.day).at_beginning_of_day
+    time_range = from...to
+  end
+
+
 
   def book_params
     params.require(:book).permit(:title, :body)
