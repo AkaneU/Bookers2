@@ -15,7 +15,6 @@ class BookCommentsController < ApplicationController
     book_comment.destroy
   end
 
-
   private
   def book_comment_params
     params.require(:book_comment).permit(:comment)
