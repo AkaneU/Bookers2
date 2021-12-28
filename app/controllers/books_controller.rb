@@ -2,7 +2,11 @@ class BooksController < ApplicationController
 
 
   def index
-    @books = Book.left_joins(:favorites).group(:book_id).order('count(user_id) desc')
+    @books = Book.includes(:favorited_users).
+      sort {|a,b|
+        b.favorited_users.where(favorites: {created_at: time_range}).size <=>
+        a.favorited_users.where(favorites: {created_at: time_range}).size
+      }
     @new_book = Book.new
     @user = User.find(current_user.id)
     @content = params["content"]
